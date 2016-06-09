@@ -1,0 +1,14 @@
+<h1>Edit Product</h1>
+<% if flash[:errors]
+	flash[:errors].each do |error| %>
+	<div class="alert-danger"><%= error %></div>
+	<%end%>
+<%end%>
+<%= simple_form_for @product, url: {action: 'update'}, :method => :put do |f| %>
+	<%= f.input :name, input_html: {value: @p.name } %>
+	<%= f.input :description, input_html: {value: @p.description } %>
+	<%= f.input :pricing, input_html: {value: @p.pricing } %>
+	<%= f.association :category, input_html: {value: @p.cat } %>
+	<%= f.button :submit, 'Save Changes' %>
+<% end %>
+<a href="/products"><h3>Back</h3></a>

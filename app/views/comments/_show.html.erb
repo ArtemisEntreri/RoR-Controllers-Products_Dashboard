@@ -1,0 +1,5 @@
+<% if @comments %>
+<% @comments.each do |com| %>
+<div class="comment"><%= com.comment %> - <%= com.created_at.strftime('%m/%d/%y') %></div>
+<% end %>
+<% end %>

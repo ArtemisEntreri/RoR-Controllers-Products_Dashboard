@@ -1,0 +1,14 @@
+<h1>New Product</h1>
+<% if flash[:errors]
+	flash[:errors].each do |error| %>
+<div class="alert-danger"><%= error %></div>
+<%end%>
+<%end%>
+<%= simple_form_for @product do |f| %>
+	<%= f.input :name, placheolder: "Product Name" %>
+	<%= f.input :description, placeholder: "Product Description" %>
+	<%= f.input :pricing, placeholder: "$0.00" %>
+	<%= f.association :category, placeholder: "Product Category" %>
+	<%= f.button :submit %>
+<%end%>
+<a href="/products">Back</a>

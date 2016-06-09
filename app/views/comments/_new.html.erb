@@ -1,0 +1,6 @@
+<h1>Comment:</h1>
+<%= simple_form_for @comment do |f| %>
+<%= f.input :comment %>
+<%= f.button :submit %>
+<%= f.input :id, :as => :hidden, :input_html => { :value => @product.id } %>
+<% end %>
